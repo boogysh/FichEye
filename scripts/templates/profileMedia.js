@@ -18,7 +18,7 @@ class ProfileMedia {
           <div class="mediaImg">
             <img class="mediaImg" 
                 src="${`/assets/photographers/${this.folder}/${this.media.image}`}" 
-                alt="${this.media.image}">
+                alt="${this.media.title}">
                 name="Lilac_breasted_roller"
           </div>
           <div class="mediaDescription">
@@ -47,15 +47,16 @@ class ProfileMedia {
       <video  
         class"video"
         loop 
-        src="${`/assets/photographers/${this.folder}/${this.media.video}`}"
+        muted
+        src="${`/assets/photographers/${this.folder}/${this.media.video}`}" 
         name="Lilac_breasted_roller"
-        controls>
+        controls="">
       </video>
       <div class="mediaDescription">
         <h3 class="mediaCardTitle">${this.media.title}</h3>
         <div class="likes">
           <span>${this.media.likes}</span>
-          <img class="likes-img" src="/assets/icons/heart.png" alt="heart">
+          <img class="likes-img" src="/assets/icons/heart.png" alt="likes">
         </div>
       </div>
     `;

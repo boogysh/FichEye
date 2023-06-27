@@ -92,22 +92,23 @@
       <div class="sort-wrapper">
         <label for="selected" class="sort-label">Trier par</label>
         <div class="sort-btn-container" id="sort-btn-container">
-          <div role="button" class="sort-btn" id="sort-btn" onclick="toggleSortButton()">
-          <!-- <div role="button" class="sort-btn" id="sort-btn" onclick="openSortButton()" >   -->
-          <!-- <div  role="button" class="sort-btn" id="sort-btn">   -->
-            <input  type="button" class="sort-input" id="selected" name="Order by">
-            <span  class="sort-btn-selected">Popularité</span>
-            <img class="sort-arrow" src="/assets/icons/arrowBottom2.png" alt="arrow">
+          <!-- <div role="navigation"  class="sort-btn" id="sort-btn" onclick="toggleSortButton()"> -->
+          <div role="navigation" class="sort-btn" id="sort-btn">
+            <!-- <input type="button" aria-label="Order by" class="sort-input" id="selected" > -->
+            <input type="button" aria-label="Order by" class="sort-input" id="selected" onclick="toggleSortButton()">
+            <span class="sort-btn-selected">Popularité</span>
+            <img class="sort-arrow" src="/assets/icons/arrowBottom2.png" alt="arrow top-bottom">
           </div>
 
           <ul class="sort-group" role="listbox" aria-haspopup="listbox" aria-expanded="false"
             aria-activedescendant="popularity" aria-labelledby="sort-btn">
-            <li tabindex="0" id="popularity" class="sort-option-btn hidden" role="option" aria-selected="true"
-              aria-labelledby="popularity">Popularité</li>
+            <li tabindex="0" id="popularity" aria-label="popularité" class="sort-option-btn hidden" role="option"
+              aria-selected="true" aria-labelledby="popularity">Popularité</li>
             <li tabindex="0" id="date" class="sort-option-btn" role="option" aria-selected="false"
-              aria-labelledby="date">Date
+              aria-labelledby="date" aria-label="date">Date
             </li>
-            <li tabindex="0" id="title" class="sort-option-btn" role="option" aria-selected="false">Titre</li>
+            <li tabindex="0" id="title" class="sort-option-btn" role="option" aria-selected="false" aria-label="titre">
+              Titre</li>
           </ul>
         </div>
       </div>
@@ -147,7 +148,7 @@
       <aside class="likes-wrapper">
         <div class="likes-and-price">
           <div class="likes">
-            <p class="likes-count"></p>
+            <h4 class="likes-count"></h4>
             <img class="heart-count" src="/assets/icons/heart2.png" alt="like">
           </div>
           <span class="profile-price"></span>

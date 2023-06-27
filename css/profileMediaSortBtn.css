@@ -36,11 +36,13 @@
   font-weight: 700;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .sort-option-btn {
   z-index: 10;
 }
+.sort-option-btn:hover,
 .sort-option-btn:focus {
   background-color: var(--secondary);
   border: none;
@@ -53,8 +55,10 @@
   background-color: transparent;
   outline: none;
   border: none;
-  z-index: 1;
+  z-index: 5;
   border-radius: 5px;
+  cursor: pointer;
+
 }
 .sort-input:focus {
   outline: 2px solid black;

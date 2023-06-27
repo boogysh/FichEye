@@ -11,7 +11,7 @@ class PhotographerCard {
               this._card.id
             }" aria-label="card">
                 <img class="ph-image" 
-                    alt="${this._card.portrait}"
+                    alt="${this._card.name}"
                     src="${`assets/photographers/${this._card.portrait}`}"
                 >    
                 <h2 class="ph-name">${this._card.name}</h2>
