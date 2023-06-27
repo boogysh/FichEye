@@ -110,7 +110,8 @@ const matchMessage = () => {
 
 // request post
 const registerMessage = async () => {
-  const urlServer = "http://localhost:4444";
+  // const urlServer = "http://localhost:4444";
+  const urlServer = "https://fich-eye-server.vercel.app";
   const data = JSON.parse(localStorage.getItem("data"));
   try {
     const response = await fetch(`${urlServer}`, {
