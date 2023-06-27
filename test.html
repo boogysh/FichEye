@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="test.css" rel="stylesheet" type="text/css">
+    <link href="css/profileMediaSortBtn-copy.css" rel="stylesheet" type="text/css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a class="ph-card-link" href="https://www.google.com/" aria-label="card">
+        <img class="ph-image" alt="image" src="assets/favicon.png">
+        <h2 class="ph-name">title</h2>
+    </a>
+    <p class="ph-city">city</p>
+    <p class="ph-tag">tagline</p>
+    <span class="ph-price">300 €/jour</span>
+
+
+
+
+    <select name="trier" id="trier">
+        <option class="opt" ></option>
+        <option value="date">date</option>
+        <option value="title">title</option>
+    </select>
+
+    <!-- <div class="sort-wrapper">
+        <label for="sort-btn" class="sort-label">Trier par</label>
+        <div class="sort-btn-container">
+            <div class="sort-btn" onclick="toggleSortButton()">
+                <input class="sort-input" id="sort-btn" name="Order by">
+                <span class="sort-btn-selected">Popularité</span>
+                <img class="sort-arrow" src="/assets/icons/arrowBottom2.png" alt="arrow">
+            </div>
+
+            <ul class="sort-group" role="listbox" aria-haspopup="listbox" aria-expanded="false"
+                aria-activedescendant="popularity" aria-labelledby="sort-btn">
+                <li id="popularity" class="sort-option-btn hidden" role="option" aria-selected="true"
+                    aria-labelledby="popularity">Popularité</li>
+                <li id="date" class="sort-option-btn" role="option" aria-selected="false" aria-labelledby="date">Date
+                </li>
+                <li id="title" class="sort-option-btn" role="option" aria-selected="false">Titre</li>
+            </ul>
+        </div>
+    </div> -->
+
+    <!-- <div class="sort-wrapper">
+        <label for="sort-btn" class="sort-label">Trier par</label>
+        <div class="sort-btn-container">
+            <div class="sort-btn" role="button" id="sort-btn" onclick="toggleSortButton()" 
+                >
+                <input name="Order by" class="sort-input" role="button" aria-haspopup="listbox" aria-expanded="false" aria-activedescendant="popularity" aria-labelledby="sort-btn">
+
+                <span class="sort-btn-selected">Popularité</span>
+                <img class="sort-arrow" src="/assets/icons/arrowBottom2.png" alt="arrow">
+            </div>
+
+            <div class="sort-group" role="listbox">
+                <button id="popularity" class="sort-option-btn hidden" role="option" aria-selected="true"
+                    aria-labelledby="popularity">Popularité</button>
+                <button id="date" class="sort-option-btn" role="option" aria-selected="false"
+                    aria-labelledby="date">Date</button>
+                <button id="title" class="sort-option-btn" role="option" aria-selected="false">Titre</button>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="/scripts/utils/sort-btn.js"></script>
+
+</body>
+
+</html>

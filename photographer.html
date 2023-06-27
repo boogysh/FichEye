@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+  <link href="css/profileCard.css" rel="stylesheet" type="text/css">
+  <link href="css/homeCards.css" rel="stylesheet" type="text/css">
+  <link href="css/profileMediaSortBtn.css" rel="stylesheet" type="text/css">
+  <link href="css/profileMedia.css" rel="stylesheet" type="text/css">
+  <link href="css/profileContactForm.css" rel="stylesheet" type="text/css">
+  <link href="css/profileMediaSlider.css" rel="stylesheet" type="text/css">
+  <link href="css/profileLikesPrice.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <div class="container-page container-photographer">
+    <header class="header">
+      <a href="index.html">
+        <img src="assets/images/logo.png" class="logo" alt="fisheye Home page">
+      </a>
+    </header>
+    <main id="main" class="main-ph-page">
+      <div class="wrapper-header">
+        <!-- profile Card -->
+      </div>
+      <!-- <div id="contact_modal"> -->
+      <section id="contact_modal">
+        <div class="modal-wrapper">
+          <div class="modal" aria-labelledby="contact-name">
+            <div class="modal-header">
+              <h2 id="contact-name"></h2>
+              <button class="closeFormBtn" name="Close Contact form" onclick="closeModal()">
+                <img class="closeForm" src="assets/icons/close.svg" alt="close">
+              </button>
+            </div>
+            <form>
+              <!-- first Name -->
+              <div class="form-item">
+                <label for="first">Prénom</label>
+                <input tabindex="0" oninput="matchFirstName()" aria-labelledby="first" name="First name" id="first">
+                <span id="errorFirst" class="error"></span>
+              </div>
+              <!-- last Name -->
+              <div class="form-item">
+                <label for="last">Nom</label>
+                <input oninput="matchLastName()" aria-labelledby="last" id="last" name="Last name">
+                <span id="errorLast" class="error"></span>
+              </div>
+              <!-- email -->
+              <div class="form-item">
+                <label for="email">Email</label>
+                <input oninput="matchEmail()" aria-labelledby="email" id="email" name="Email">
+                <span id="errorEmail" class="error"></span>
+              </div>
+              <div class="form-item">
+                <label for="msg">Votre message</label>
+                <textarea oninput="matchMessage()" aria-labelledby="msg" name="Your message" id="msg"></textarea>
+                <span id="errorMsg" class="error"></span>
+              </div>
+              <button type="submit" class="contact_button" name="Send" id="submitBtn">Envoyer</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- sort button -->
+      <!-- <div class="sort-wrapper">
+        <label for="selected" class="sort-label">Trier par</label>
+        <div class="sort-btn-container" id="sort-btn-container">
+          <div role="button" class="sort-btn" id="sort-btn" onclick="toggleSortButton()">
+            <input type="button" class="sort-input" id="selected" name="Order by">
+            <span class="sort-btn-selected">Popularity</span>
+            <img class="sort-arrow" src="/assets/icons/arrowBottom2.png" alt="arrow">
+          </div>
+
+          <ul class="sort-group" role="listbox" aria-haspopup="listbox" aria-expanded="false"
+            aria-activedescendant="popularity" aria-labelledby="sort-btn">
+            <li id="popularity" class="sort-option-btn hidden" role="option" aria-selected="true"
+              aria-labelledby="popularity">Popularité</li>
+            <li id="date" class="sort-option-btn" role="option" aria-selected="false" aria-labelledby="date">Date
+            </li>
+            <li id="title" class="sort-option-btn" role="option" aria-selected="false">Titre</li>
+          </ul>
+        </div>
+      </div> -->
+
+      <div class="sort-wrapper">
+        <label for="selected" class="sort-label">Trier par</label>
+        <div class="sort-btn-container" id="sort-btn-container">
+          <div role="button" class="sort-btn" id="sort-btn" onclick="toggleSortButton()">
+          <!-- <div role="button" class="sort-btn" id="sort-btn" onclick="openSortButton()" >   -->
+          <!-- <div  role="button" class="sort-btn" id="sort-btn">   -->
+            <input  type="button" class="sort-input" id="selected" name="Order by">
+            <span  class="sort-btn-selected">Popularité</span>
+            <img class="sort-arrow" src="/assets/icons/arrowBottom2.png" alt="arrow">
+          </div>
+
+          <ul class="sort-group" role="listbox" aria-haspopup="listbox" aria-expanded="false"
+            aria-activedescendant="popularity" aria-labelledby="sort-btn">
+            <li tabindex="0" id="popularity" class="sort-option-btn hidden" role="option" aria-selected="true"
+              aria-labelledby="popularity">Popularité</li>
+            <li tabindex="0" id="date" class="sort-option-btn" role="option" aria-selected="false"
+              aria-labelledby="date">Date
+            </li>
+            <li tabindex="0" id="title" class="sort-option-btn" role="option" aria-selected="false">Titre</li>
+          </ul>
+        </div>
+      </div>
+
+      <section id="media" class="media">
+        <!-- media content -->
+        <!-- media content -->
+        <!-- media content -->
+      </section>
+
+
+      <!-- SLIDER -->
+      <section id="slider">
+        <div class="slider-wrapper">
+          <div class="slider" role="dialog" aria-label="image-closeup view">
+            <button name="Close dialog" class="sliderClose" onclick="closeSlider()">
+              <img src="assets/icons/closeSlider.svg" alt="Close dialog">
+            </button>
+            <div class="slider-content">
+              <a id="previous" aria-label="Previous image">
+                <img class="slider-icon" src="/assets/icons/arrowLeft.png" alt="preview icon">
+              </a>
+              <div class="slider-images">
+                <!-- <img class="slider-img" alt=""> -->
+                <!-- || -->
+                <!-- <video class="videoOne" src="" controls loop></video> -->
+                <h3 class="slider-title">Arc en ciel</h3>
+              </div>
+              <a id="next" aria-label="Next image">
+                <img class="slider-icon" src="/assets/icons/arrowRight.png" alt="next">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- LIKES AND PRICE -->
+      <aside class="likes-wrapper">
+        <div class="likes-and-price">
+          <div class="likes">
+            <p class="likes-count"></p>
+            <img class="heart-count" src="/assets/icons/heart2.png" alt="like">
+          </div>
+          <span class="profile-price"></span>
+        </div>
+      </aside>
+
+    </main>
+  </div>
+
+  <script src="scripts/api/api.js"></script>
+  <script src="/scripts/templates/profileCard.js"></script>
+  <script src="/scripts/templates/sortAndCreateMedia.js"></script>
+  <script src="/scripts/templates/profileMedia.js"></script>
+  <script src="/scripts/templates/slider.js"></script>
+  <script src="/scripts/templates/sliderFactory.js"></script>
+  <script src="/scripts/templates/manageLikesAndPrice.js"></script>
+  <script src="/scripts/pages/profilePage.js"></script>
+
+
+  <script src="/scripts/utils/contactForm.js"></script>
+  <script src="/scripts/utils/slider.js"></script>
+  <script src="/scripts/utils/sort-btn.js"></script>
+</body>
+
+</html>

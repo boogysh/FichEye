@@ -1,0 +1,172 @@
+#media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1240px;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+#media:after {
+  content: "";
+  width: 350px;
+}
+
+.mediaCard {
+  position: relative;
+  width: 350px;
+  height: auto;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.mediaLink {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.mediaImg {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.video,
+video {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+video {
+  width: 350px;
+}
+
+.mediaDescription {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.mediaCardTitle {
+  font-size: 24px;
+  line-height: 31px;
+  color: var(--primary);
+  font-weight: 400;
+}
+.likes {
+  display: flex;
+  align-items: center;
+}
+.likes span {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary);
+}
+.likes-img {
+  width: 21px;
+  height: 21px;
+  object-fit: cover;
+  margin-left: 6px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1279px) {
+  #media {
+    justify-content: center;
+  }
+  .mediaCard {
+    width: 50%;
+    align-items: center;
+  }
+  .mediaDescription {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #media {
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 859px) {
+  .mediaCard {
+    width: 100%;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mediaCard {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .mediaCardTitle {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .likes span {
+    font-size: 20px;
+  }
+  .likes-img {
+    width: 16px;
+    height: 16px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .mediaImg,
+  video {
+    width: 320px;
+    height: 280px;
+  }
+  .mediaDescription {
+    width: 320px;
+  }
+  .mediaCardTitle {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .likes span {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  /* video{
+    width: 100%;
+  } */
+  #media:after {
+    width: 0px;
+  }
+
+  .mediaImg,
+  video {
+    width: 260px;
+    height: 200px;
+  }
+  .mediaDescription {
+    width: 260px;
+    margin-top: 5px;
+  }
+  .mediaCardTitle {
+    font-size: 16px;
+  }
+  .likes span {
+    font-size: 16px;
+  }
+  .likes-img {
+    width: 14px;
+    height: 14px;
+  }
+}

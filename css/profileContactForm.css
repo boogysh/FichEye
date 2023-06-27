@@ -1,0 +1,281 @@
+#contact_modal {
+  display: none;
+}
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.315);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 95;
+  overflow: auto;
+}
+.modal {
+  position: relative;
+  margin: 5% auto;
+  padding: 15px 35px 38px;
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 70%;
+  max-width: 670px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.closeFormBtn,
+.closeFormImg {
+  cursor: pointer;
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  width: 42px;
+  height: 42px;
+  /* border: 2px solid black; */
+}
+
+.modal-header h2 {
+  font-size: 64px;
+  line-height: 70px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-item {
+  margin: 0;
+}
+
+form label {
+  color: #312e2e;
+  font-size: 36px;
+  line-height: 47px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 26px;
+}
+
+form input,
+textarea {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  padding-left: 15px;
+  outline: 2px solid #db8876;
+}
+textarea {
+  height: 170px;
+  resize: none;
+  padding: 10px;
+}
+form input:focus,textarea:focus {
+  border: 2px solid black;
+}
+
+form input.border-error,
+textarea.border-error {
+  outline: 2px solid red;
+}
+
+.error {
+  color: var(--primary);
+  padding-top: 7px;
+}
+#errorMsg.error {
+  padding-bottom: 7px;
+}
+
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: var(--primary);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact_button:hover,
+.contact_button:focus {
+  background-color: var(--secondary);
+  color: black;
+  outline: none;
+  border: 2px solid black;  
+}
+
+@media screen and (max-width: 1279px) {
+  .modal-header h2 {
+    font-size: 56px;
+    line-height: 65px;
+  }
+  .closeFormImg {
+    top: 30px;
+    right: 30px;
+    width: 38px;
+    height: 38px;
+  }
+  form label {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .modal-header h2 {
+    font-size: 50px;
+    line-height: 56px;
+    margin-bottom: 10px;
+  }
+  form label {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  form input {
+    height: 60px;
+    font-size: 22px;
+  }
+  .error {
+    font-size: 14px;
+  }
+  .contact_button {
+    width: 150px;
+    height: 65px;
+    font-size: 16px;
+  }
+  textarea {
+    height: 160px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .modal {
+    width: 65%;
+  }
+
+  .modal-header h2 {
+    font-size: 40px;
+    line-height: 46px;
+  }
+  form label {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  form input {
+    height: 55px;
+    font-size: 20px;
+  }
+  .closeFormImg {
+    top: 26px;
+    right: 26px;
+    width: 34px;
+    height: 34px;
+  }
+  textarea {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 70%;
+    padding: 15px 25px 25px;
+  }
+  .contact_button {
+    width: 130px;
+    height: 55px;
+    font-size: 14px;
+  }
+  .modal-header h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  form label {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  form input,
+  textarea {
+    font-size: 18px;
+    height: 50px;
+  }
+  textarea {
+    height: 130px;
+  }
+  .closeFormImg {
+    top: 25px;
+    right: 25px;
+    width: 26px;
+    height: 26px;
+  }
+  .error {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 539px) {
+  .modal {
+    width: 90%;
+  }
+  .modal-header h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .contact_button {
+    width: 110px;
+    height: 50px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 359px) {
+  .modal {
+    width: 100%;
+    border-radius: 0;
+    padding: 15px 20px 25px;
+  }
+  .modal-header h2 {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
+  form label {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  form input,
+  textarea {
+    font-size: 16px;
+    height: 45px;
+  }
+  textarea {
+    height: 120px;
+  }
+  .closeFormImg {
+    top: 20px;
+    right: 20px;
+    width: 22px;
+    height: 22px;
+  }
+  .error {
+    font-size: 10px;
+  }
+}
