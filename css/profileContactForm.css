@@ -25,6 +25,9 @@
   display: flex;
   flex-direction: column;
 }
+/* .modal:focus {
+  outline: 2px solid black;
+} */
 
 .modal-header {
   display: flex;
@@ -89,7 +92,8 @@ textarea {
   resize: none;
   padding: 10px;
 }
-form input:focus,textarea:focus {
+form input:focus,
+textarea:focus {
   border: 2px solid black;
 }
 
@@ -110,9 +114,11 @@ textarea.border-error {
   font-size: 20px;
   font-weight: bold;
   color: white;
-  padding: 11px;
   width: 170px;
   height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   background-color: var(--primary);
   border-radius: 5px;
@@ -123,7 +129,7 @@ textarea.border-error {
   background-color: var(--secondary);
   color: black;
   outline: none;
-  border: 2px solid black;  
+  border: 2px solid black;
 }
 
 @media screen and (max-width: 1279px) {

@@ -1,10 +1,13 @@
 //open contact Form
-export function displayModal() {
+function displayModal() {
   const modal = document.getElementById("contact_modal");
   modal.style.display = "block";
-  modal.focus();
-  document.getElementById("contact_modal").focus();
 }
+//
+const contactBtn = document.querySelector(".contact_button");
+contactBtn.addEventListener("click", () => {
+  displayModal();
+});
 //close contact Form
 function closeModal() {
   const modal = document.getElementById("contact_modal");
@@ -137,6 +140,12 @@ function resetAllInputs() {
 //events
 const submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", (e) => sendForm(e));
+//
+submitBtn.addEventListener("focus", () => {
+  window.addEventListener("keyup", (e) => {
+    e.key === "Enter" && sendForm(e);
+  });
+});
 
 async function sendForm(e) {
   e.preventDefault();
@@ -160,5 +169,3 @@ async function sendForm(e) {
     !data.message && matchMessage();
   }
 }
-
-

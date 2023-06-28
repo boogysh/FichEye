@@ -1,6 +1,6 @@
 #slider {
   display: none;
-  z-index: 20;
+  z-index: 40;
 }
 .slider-wrapper {
   width: 100%;
@@ -24,7 +24,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  z-index: 20;
+  z-index: 99;
   background-color: white;
 }
 

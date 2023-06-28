@@ -23,14 +23,14 @@ class SliderFactory {
   }
   image(src, title) {
     const newImage = `
-      <img class="slider-img" src="${src}" alt="${title}" title="${title}" >
+      <img  class="slider-img" src="${src}" alt="${title}" title="${title}" >
       <h3 class="slider-title">${title}</h3>
       `;
     this.wrapper.innerHTML = newImage;
   }
   video(src, title) {
     const newVideo = `
-    <video 
+    <video tabindex="0"
       class="videoOne" 
       src="${src}" 
       controls

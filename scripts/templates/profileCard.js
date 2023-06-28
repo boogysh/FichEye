@@ -15,7 +15,8 @@ class ProfileCard {
             <p class="header-tag">${this._header.tagline}</p>
         </div>
         <div class="header-item">
-            <button  name="${`Contant me ${this._header.name}`} " class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            <button name="${`Contant me ${this._header.name}`}" class="contact_button" 
+            onclick="displayModal()" >Contactez-moi</button>
         </div>
         <div class="header-item">
             <img class="header-img" 
@@ -28,4 +29,4 @@ class ProfileCard {
     return $wrapper;
   }
 }
-export default ProfileCard
+export default ProfileCard;
