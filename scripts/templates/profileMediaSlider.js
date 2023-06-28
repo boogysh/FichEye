@@ -1,4 +1,5 @@
-class Slider {
+import SliderFactory from "./sliderFactory.js";
+export default class Slider {
   constructor(media, folder) {
     this.media = media;
     this.folder = folder;
@@ -22,7 +23,7 @@ class Slider {
         new SliderFactory(names, titles, this.folder, index);
       });
     });
-    //
+    // create slider after sorting media
     const sortBtns = document.querySelectorAll(".sort-option-btn");
     sortBtns.forEach((btn) => {
       btn.addEventListener("click", () => {

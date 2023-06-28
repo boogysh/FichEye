@@ -1,16 +1,16 @@
-class ProfileMedia {
+import { displaySlider } from "../utils/slider.js";
+
+export default class ProfileMedia {
   constructor(media, folder) {
     this.media = media;
     this.folder = folder;
   }
-
   createMediaImage() {
     const $wrapper = document.createElement("div");
     $wrapper.classList.add("mediaCard");
     $wrapper.addEventListener("click", () => {
       displaySlider();
     });
-
     const createImage = `
           <a  class="mediaLink" href="#" name="${this.media.image}" title="${
       this.media.title
@@ -29,7 +29,6 @@ class ProfileMedia {
             </div>
           </div>
         `;
-
     $wrapper.innerHTML = createImage;
     return $wrapper;
   }
@@ -39,7 +38,6 @@ class ProfileMedia {
     $wrapper.addEventListener("click", () => {
       displaySlider();
     });
-
     const createVideo = `
       <a  class="mediaLink" href="#" name="${this.media.video}" title="${
       this.media.title

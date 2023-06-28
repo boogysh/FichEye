@@ -28,3 +28,4 @@ class ProfileCard {
     return $wrapper;
   }
 }
+export default ProfileCard

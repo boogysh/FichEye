@@ -8,16 +8,14 @@ class Api {
   }
 
   async get() {
-    return (
-      fetch(this._url)
-        .then((res) => res.json())
-        .then((res) => res)
-        .catch((err) => console.log("an error occurs", err))
-    );
+    return fetch(this._url)
+      .then((res) => res.json())
+      .then((res) => res)
+      .catch((err) => console.log("an error occurs", err));
   }
 }
 
-class CardApi extends Api {
+export default class CardApi extends Api {
   /**
    *
    * @param {string} url
@@ -30,3 +28,5 @@ class CardApi extends Api {
     return await this.get();
   }
 }
+
+

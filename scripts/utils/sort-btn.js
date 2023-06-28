@@ -1,6 +1,6 @@
 const sortBtn = document.querySelector("#sort-btn");
 const sortBtnSelected = document.querySelector(".sort-btn-selected");
-const sortBtnContainer = document.querySelector(".sort-btn-container");
+// const sortBtnContainer = document.querySelector(".sort-btn-container");
 const sortGroup = document.querySelector(".sort-group");
 const sortArrow = document.querySelector(".sort-arrow");
 const optionsBtn = document.querySelectorAll(".sort-option-btn");
@@ -17,14 +17,7 @@ function toggleSortButton() {
   sortBtn.classList.toggle("open");
   sortBtnSelected.classList.toggle("open");
 }
-
-function openSortButton() {
-  sortGroup.classList.add("open");
-  sortArrow.classList.add("rotate");
-  sortBtn.classList.add("open");
-  sortBtnSelected.classList.add("open");
-}
-
+//CLOSE SORT BUTTON
 function closeSortButton() {
   sortGroup.classList.remove("open");
   sortArrow.classList.remove("rotate");
@@ -40,9 +33,6 @@ document.addEventListener("focusout", (ev) => {
   const title = ev.relatedTarget?.id === "title";
   !selected && !popularity && !date && !title && closeSortButton();
 });
-
-//
-
 // TOGGLE ARIA-EXPANDED
 function toggleAriaExpanded() {
   // sortBtn.setAttribute(
@@ -70,21 +60,17 @@ function setAriaSelected(option) {
 const removeHidden = () => {
   optionsBtn.forEach((btn) => btn.classList.remove("hidden"));
 };
-
 //SHOW SELECTED OPTION LIKE "SELECTED" AND HIDE THE SAME VALUE IN OPTIONS LIST
 const select = (btn, text, el) => {
-  //
   removeHidden();
   el.classList.add("hidden");
+  selected.value = text;
   sortBtnSelected.innerHTML = text;
-  //
   toggleAriaExpanded();
   setAriaActiveDescendant(btn);
   removeAriaSelected();
   setAriaSelected(btn);
-  //
   toggleSortButton();
-  //
 };
 // ADD TEXT TO SELECTED OPTION, MANAGE ARIA-ACTIVEDESCENDANT & ARIA-SELECTED
 optionsBtn.forEach((btn) =>

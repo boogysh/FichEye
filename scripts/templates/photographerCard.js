@@ -1,4 +1,4 @@
-class PhotographerCard {
+export default class PhotographerCard {
   constructor(card) {
     this._card = card;
   }

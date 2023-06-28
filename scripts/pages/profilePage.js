@@ -1,3 +1,7 @@
+import CardApi from "../api/api.js";
+import ProfileCard from "../templates/profileCard.js";
+import SortAndCreateMedia from "../templates/sortAndCreateMedia.js";
+import ManageLikesAndPrice from "../templates/manageLikesAndPrice.js";
 class photographerPage {
   constructor() {
     this.$profileWrapper = document.querySelector(".wrapper-header");
@@ -35,7 +39,7 @@ class photographerPage {
     //
     // get profile Media
     const profileMedia = media.filter((item) => item.photographerId === id);
-    // 
+    //
     //SORT AND CREATE MEDIA
     new SortAndCreateMedia(profileMedia, folder).init();
 

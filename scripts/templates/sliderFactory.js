@@ -6,8 +6,6 @@ class SliderFactory {
     this.index = index;
     this.wrapper = document.querySelector(".slider-images");
     //
-    // console.log("names?????", this.names);
-    //
     const name = this.names[index];
     const title = this.titles[this.index];
     const format = name.substring(name.lastIndexOf(".") + 1, name.length);
@@ -23,7 +21,6 @@ class SliderFactory {
         title
       );
   }
-
   image(src, title) {
     const newImage = `
       <img class="slider-img" src="${src}" alt="${title}" title="${title}" >
@@ -44,3 +41,4 @@ class SliderFactory {
     this.wrapper.innerHTML = newVideo;
   }
 }
+export default SliderFactory

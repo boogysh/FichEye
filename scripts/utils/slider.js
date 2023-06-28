@@ -1,8 +1,8 @@
-function displaySlider() {
+export function displaySlider() {
   const slider = document.getElementById("slider");
   slider.style.display = "block";
 }
-function closeSlider() {
+export function closeSlider() {
   const slider = document.getElementById("slider");
   slider.style.display = "none";
 }
@@ -10,3 +10,4 @@ function closeSlider() {
 window.addEventListener("keyup", (e) => {
   e.key === "Escape" && closeSlider();
 });
+

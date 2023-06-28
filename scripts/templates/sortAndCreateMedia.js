@@ -1,10 +1,11 @@
+import ProfileMedia from "../templates/profileMedia.js";
+import Slider from "./profileMediaSlider.js";
 class SortAndCreateMedia {
   constructor(media, folder) {
     this.media = media;
     this.folder = folder;
     this.wrapper = document.querySelector(".sort-btn-container");
   }
-
   createMedia(media) {
     const cardsWrapper = document.querySelector(".media");
     //clear all media before sorting
@@ -16,7 +17,6 @@ class SortAndCreateMedia {
       el.video && cardsWrapper.appendChild(TemplateMedia.createMediaVideo());
     });
   }
-
   // SORT BY POPULARITY
   byPopularity() {
     this.media.sort((a, b) => {
@@ -100,6 +100,7 @@ class SortAndCreateMedia {
     return sortedResult;
   }
 }
+export default SortAndCreateMedia;
 
 // init() {
 //   let sortedResult = [];

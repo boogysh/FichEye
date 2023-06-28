@@ -1,5 +1,5 @@
 //open contact Form
-function displayModal() {
+export function displayModal() {
   const modal = document.getElementById("contact_modal");
   modal.style.display = "block";
   modal.focus();
@@ -55,7 +55,6 @@ const matchFirstName = () => {
     localStorage.removeItem("fistName");
   }
 };
-
 // Match last name
 const matchLastName = () => {
   const LN = document.querySelector("#last");
@@ -72,12 +71,11 @@ const matchLastName = () => {
     localStorage.removeItem("lastName");
   }
 };
-
 // Match email
 const matchEmail = () => {
   const EMAIL = document.querySelector("#email");
   const errorEMAIL = document.querySelector("#errorEmail");
-  const matched = EMAIL.value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+  const matched = EMAIL.value.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/);
   if (matched) {
     delError(errorEMAIL, emptyErrorMsg, EMAIL);
     localStorage.setItem("email", EMAIL.value);
@@ -87,7 +85,7 @@ const matchEmail = () => {
   }
 };
 
-// Match email
+// Match message
 const matchMessage = () => {
   const MSG = document.querySelector("#msg");
   const errorMSG = document.querySelector("#errorMsg");
@@ -101,7 +99,7 @@ const matchMessage = () => {
     addError(errorMSG, MsgErrorMsg, MSG);
     localStorage.removeItem("message");
   } else if (MSG.value.length >= 2 && !matched) {
-    addError(errorLN, Msg_advice_ErrorMsg, LN);
+    addError(errorMSG, Msg_advice_ErrorMsg, MSG);
     localStorage.removeItem("message");
   }
 };
@@ -137,6 +135,7 @@ function resetAllInputs() {
 }
 
 //events
+const submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", (e) => sendForm(e));
 
 async function sendForm(e) {
@@ -161,3 +160,5 @@ async function sendForm(e) {
     !data.message && matchMessage();
   }
 }
+
+

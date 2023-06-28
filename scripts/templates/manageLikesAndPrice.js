@@ -21,6 +21,7 @@ class ManageLikesAndPrice {
     this.profilePrice.innerHTML = `${this.card.price}€ / jour`;
   }
 }
+export default ManageLikesAndPrice
 
 // const initialValue = 0;
 // const totalLikes = likesArray.reduce(
