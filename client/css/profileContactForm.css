@@ -137,6 +137,7 @@ textarea.border-error {
     font-size: 56px;
     line-height: 65px;
   }
+  .closeFormBtn,
   .closeFormImg {
     top: 30px;
     right: 30px;
@@ -192,6 +193,7 @@ textarea.border-error {
     height: 55px;
     font-size: 20px;
   }
+  .closeFormBtn,
   .closeFormImg {
     top: 26px;
     right: 26px;
@@ -228,6 +230,7 @@ textarea.border-error {
   textarea {
     height: 130px;
   }
+  .closeFormBtn,
   .closeFormImg {
     top: 25px;
     right: 25px;
@@ -275,6 +278,7 @@ textarea.border-error {
   textarea {
     height: 120px;
   }
+  .closeFormBtn,
   .closeFormImg {
     top: 20px;
     right: 20px;
