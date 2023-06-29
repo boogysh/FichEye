@@ -1,8 +1,6 @@
 export function displaySlider() {
   const slider = document.getElementById("slider");
   slider.style.display = "block";
-  const videoOne = document.querySelector(".videoOne");
-  videoOne && videoOne.focus();
 }
 
 function closeSlider() {
@@ -14,6 +12,10 @@ const closeBtn = document.querySelector(".sliderClose");
 closeBtn.addEventListener("click", closeSlider);
 
 // close slider using escape Button
+const sliderContent = document.querySelector(".slider-images");
 window.addEventListener("keyup", (e) => {
-  e.key === "Escape" && closeSlider();
+  if (e.key === "Escape") {
+    closeSlider();
+    sliderContent.focus();
+  }
 });

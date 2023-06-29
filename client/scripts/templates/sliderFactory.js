@@ -39,6 +39,8 @@ class SliderFactory {
     <h3 class="slider-title">${title}</h3>
     `;
     this.wrapper.innerHTML = newVideo;
+    const videoOne = document.querySelector(".videoOne");
+    videoOne && videoOne.focus();
   }
 }
 export default SliderFactory;

@@ -96,8 +96,6 @@ optionsBtn.forEach((btn) => {
         id1 && select(btn, "Popularité", popularity);
         id2 && select(btn, "Date", date);
         id3 && select(btn, "Titre", title);
-        //keep focus after selecting
-        selected.focus();
       }
     });
   });
