@@ -34,9 +34,7 @@
   justify-content: space-between;
   width: 100%;
 }
-
-.closeFormBtn,
-.closeFormImg {
+.closeFormBtn {
   cursor: pointer;
   position: absolute;
   top: 35px;
@@ -45,7 +43,10 @@
   height: 42px;
   /* border: 2px solid black; */
 }
-
+.closeFormImg {
+  width: 42px;
+  height: 42px;
+}
 .modal-header h2 {
   font-size: 64px;
   line-height: 70px;
