@@ -17,7 +17,7 @@ export default class Slider {
       // create  names and titles
       names.push(el.name);
       titles.push(el.title);
-      // create slider
+      // create slider on click
       el.addEventListener("click", () => {
         currentIndex = index;
         new SliderFactory(names, titles, this.folder, index);
@@ -44,23 +44,9 @@ export default class Slider {
     previousBtn.addEventListener("click", () => {
       currentIndex = this.previous(names, titles, currentIndex);
     });
-    //go to Previous Slide then the arrow is focused and using eneter key
-    previousBtn.addEventListener("focus", () => {
-      window.addEventListener("keyup", (e) => {
-        e.key === "Enter" &&
-          (currentIndex = this.previous(names, titles, currentIndex));
-      });
-    });
     //go to Next Slide
     nextBtn.addEventListener("click", () => {
       currentIndex = this.next(names, titles, currentIndex);
-    });
-    //go to Next Slide then the arrow is focused and using eneter key
-    nextBtn.addEventListener("focus", () => {
-      window.addEventListener("keyup", (e) => {
-        e.key === "Enter" &&
-          (currentIndex = this.next(names, titles, currentIndex));
-      });
     });
     //go to Previuos / Next using arrowKeys
     window.addEventListener("keyup", (e) => {

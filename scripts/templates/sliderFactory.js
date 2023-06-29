@@ -23,7 +23,7 @@ class SliderFactory {
   }
   image(src, title) {
     const newImage = `
-      <img  class="slider-img" src="${src}" alt="${title}" title="${title}" >
+      <img  class="slider-img" src="${src}" alt="${title}" >
       <h3 class="slider-title">${title}</h3>
       `;
     this.wrapper.innerHTML = newImage;
@@ -41,4 +41,4 @@ class SliderFactory {
     this.wrapper.innerHTML = newVideo;
   }
 }
-export default SliderFactory
+export default SliderFactory;

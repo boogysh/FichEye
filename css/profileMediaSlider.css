@@ -32,7 +32,7 @@
 #previous {
   border: none;
   background-color: transparent;
-  z-index: 99;
+  z-index: 80;
   width: 30px;
   height: 48px;
 }
@@ -57,6 +57,7 @@
 .slider-icon {
   width: 30px;
   height: 48px;
+  z-index: 1;
 }
 .slider-img,
 .videoOne {

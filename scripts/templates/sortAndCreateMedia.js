@@ -82,7 +82,6 @@ class SortAndCreateMedia {
         }
       });
     });
-
     //SORT BY TITLE
     titleBtn.addEventListener("click", () => {
       sortedResult = this.sortAndCreate(sortedResult, this.byTitle());
@@ -101,48 +100,3 @@ class SortAndCreateMedia {
   }
 }
 export default SortAndCreateMedia;
-
-// init() {
-//   let sortedResult = [];
-//   const popularityBtn = document.querySelector("#popularity");
-//   const dateBtn = document.querySelector("#date");
-//   const titleBtn = document.querySelector("#title");
-//   //SORT BY DEFAULT === POPULARITY
-//   sortedResult = this.byPopularity();
-//   this.createMedia(sortedResult);
-//   new Slider(sortedResult, this.folder).createMediaSlider();
-//   //SORT BY POPULARITY
-//   popularityBtn.addEventListener("click", () => {
-//     sortedResult = this.sortAndCreate(sortedResult, this.byPopularity());
-//     // sortedResult = this.byPopularity();
-//     // this.createMedia(sortedResult);
-//     // new Slider(sortedResult, this.folder).createMediaSlider();
-//   });
-//   // // SORT BY DATE
-//   dateBtn.addEventListener("click", () => {
-//     sortedResult = this.sortAndCreate(sortedResult, this.byDate());
-//     // sortedResult = this.byDate();
-//     // this.createMedia(sortedResult);
-//     // new Slider(sortedResult, this.folder).createMediaSlider();
-//   });
-//   //sort by date then focused and using enter key
-//   dateBtn.addEventListener("focus", () => {
-//     window.addEventListener("keyup", (e) => {
-//       if (e.key === "Enter") {
-//         sortedResult = this.byDate();
-//         this.createMedia(sortedResult);
-//         new Slider(sortedResult, this.folder).createMediaSlider();
-//       }
-//     });
-//   });
-
-//   //SORT BY TITLE
-//   titleBtn.addEventListener("click", () => {
-//     sortedResult = this.sortAndCreate(sortedResult, this.byTitle());
-//     // sortedResult = this.byTitle();
-//     // this.createMedia(sortedResult);
-//     // new Slider(sortedResult, this.folder).createMediaSlider();
-//   });
-//   return sortedResult;
-// }
-// }

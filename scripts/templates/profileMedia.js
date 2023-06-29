@@ -11,8 +11,11 @@ export default class ProfileMedia {
     $wrapper.addEventListener("click", () => {
       displaySlider();
     });
+
     const createImage = `
-          <a  class="mediaLink" href="#" name="${this.media.image}" title="${
+          <a tabindex="0" class="mediaLink" href="#" name="${
+            this.media.image
+          }" title="${
       this.media.title
     }" aria-label="Lilac breasted roller, closeup view" ></a>
           <div class="mediaImg">
@@ -32,6 +35,7 @@ export default class ProfileMedia {
     $wrapper.innerHTML = createImage;
     return $wrapper;
   }
+
   createMediaVideo() {
     const $wrapper = document.createElement("div");
     $wrapper.classList.add("mediaCard");
@@ -39,7 +43,7 @@ export default class ProfileMedia {
       displaySlider();
     });
     const createVideo = `
-      <a  class="mediaLink" href="#" name="${this.media.video}" title="${
+      <a class="mediaLink" href="#" name="${this.media.video}" title="${
       this.media.title
     }" aria-label="Lilac breasted roller, closeup view" ></a>
       <video  
@@ -63,29 +67,3 @@ export default class ProfileMedia {
   }
 }
 
-// createMediaSlider() {
-//   const $wrapper = document.createElement("div");
-//   $wrapper.classList.add("slider-wrapper");
-
-//   const createSlider = `
-//     <div class="slider" aria-label="image-closeup view">
-//       <button class="sliderClose" onclick="closeSlider()">
-//         <img src="assets/icons/closeSlider.svg" name="Close Contact form" />
-//       </button>
-//       <div class="slider-content">
-//         <button>
-//           <img class="slider-icon" src="/assets/icons/arrowLeft.png" alt="preview" name="Lilac breasted roller">
-//         </button>
-//         <div>
-//           <img class="slider-img" src="/assets/photographers/Ellie Rose/Architecture_Water_on_Modern.jpg" alt="">
-//           <h3 class="slider-title">Arc en ciel</h3>
-//         </div>
-//         <button>
-//           <img class="slider-icon" src="/assets/icons/arrowRight.png" alt="next">
-//         </button>
-//       </div>
-//     </div>
-//   `;
-//   $wrapper.innerHTML = createSlider;
-//   return $wrapper;
-// }
