@@ -12,12 +12,12 @@ class SliderFactory {
     //
     format === "jpg" &&
       this.image(
-        `/assets/photographers/${this.folder}/${this.names[this.index]}`,
+        `assets/photographers/${this.folder}/${this.names[this.index]}`,
         title
       );
     format === "mp4" &&
       this.video(
-        `/assets/photographers/${this.folder}/${this.names[this.index]}`,
+        `assets/photographers/${this.folder}/${this.names[this.index]}`,
         title
       );
   }

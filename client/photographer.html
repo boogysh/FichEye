@@ -36,7 +36,7 @@
           <div class="modal" aria-labelledby="contact-name">
             <div class="modal-header">
               <h2 id="contact-name"></h2>
-              <button class="closeFormBtn" name="Close Contact form" onclick="closeModal()">
+              <button tabindex="0" class="closeFormBtn" name="Close Contact form" onclick="closeModal()">
                 <img class="closeForm" src="assets/icons/close.svg" alt="close">
               </button>
             </div>
@@ -79,7 +79,7 @@
             <input type="button" aria-label="Order by" class="sort-input" id="selected" onclick="toggleSortButton()"
               value="Popularité">
             <span class="sort-btn-selected">Popularité</span>
-            <img class="sort-arrow" src="/assets/icons/arrowBottom2.png" alt="arrow top-bottom">
+            <img class="sort-arrow" src="assets/icons/arrowBottom2.png" alt="arrow top-bottom">
           </div>
 
           <!--  -->
@@ -114,7 +114,7 @@
             </button>
             <div class="slider-content">
               <a id="previous" aria-label="Previous image">
-                <img class="slider-icon" src="/assets/icons/arrowLeft.png" alt="preview icon">
+                <img class="slider-icon" src="assets/icons/arrowLeft.png" alt="preview icon">
               </a>
               <div class="slider-images">
                 <!-- <img class="slider-img" alt=""> -->
@@ -123,7 +123,7 @@
                 <h3 class="slider-title">Arc en ciel</h3>
               </div>
               <a id="next" aria-label="Next image">
-                <img class="slider-icon" src="/assets/icons/arrowRight.png" alt="next">
+                <img class="slider-icon" src="assets/icons/arrowRight.png" alt="next">
               </a>
             </div>
           </div>
@@ -136,7 +136,7 @@
             <h4 class="likes-count">
               <!-- 1 260 -->
             </h4>
-            <img class="heart-count" src="/assets/icons/heart2.png" alt="like">
+            <img class="heart-count" src="assets/icons/heart2.png" alt="like">
           </div>
           <span class="profile-price">
             <!-- 300€ / jour -->
@@ -147,10 +147,10 @@
     </main>
   </div>
 
-  <script type="module" src="/scripts/pages/profilePage.js"></script>
-  <script src="/scripts/utils/sort-btn.js"></script>
-  <script type="module" src="/scripts/utils/slider.js"></script>
-  <script src="/scripts/utils/contactForm.js"></script>
+  <script type="module" src="scripts/pages/profilePage.js"></script>
+  <script src="scripts/utils/sort-btn.js"></script>
+  <script type="module" src="scripts/utils/slider.js"></script>
+  <script src="scripts/utils/contactForm.js"></script>
 
 
 

@@ -1,11 +1,12 @@
 import PhotographerCard from "../templates/photographerCard.js";
+// import CardApi from "../api/api.js";
 import CardApi from "../api/api.js";
 
 export default class homePage {
   // class homePage {
   constructor() {
     this.$cardsWrapper = document.querySelector(".photographers_section");
-    this.cardsApi = new CardApi("/data/photographers.json");
+    this.cardsApi = new CardApi("data/photographers.json");
   }
 
   async main() {

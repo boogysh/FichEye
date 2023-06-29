@@ -1,4 +1,4 @@
-class Api {
+  class Api {
   /**
    *
    * @param {string} url

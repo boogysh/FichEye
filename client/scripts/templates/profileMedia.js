@@ -20,7 +20,7 @@ export default class ProfileMedia {
     }" aria-label="Lilac breasted roller, closeup view" ></a>
           <div class="mediaImg">
             <img class="mediaImg" 
-                src="${`/assets/photographers/${this.folder}/${this.media.image}`}" 
+                src="${`assets/photographers/${this.folder}/${this.media.image}`}" 
                 alt="${this.media.title}">
                 name="Lilac_breasted_roller"
           </div>
@@ -28,7 +28,7 @@ export default class ProfileMedia {
             <h3 class="mediaCardTitle">${this.media.title}</h3>
             <div class="likes">
               <span>${this.media.likes}</span>
-              <img class="likes-img" src="/assets/icons/heart.png" alt="likes">
+              <img class="likes-img" src="assets/icons/heart.png" alt="likes">
             </div>
           </div>
         `;
@@ -50,7 +50,7 @@ export default class ProfileMedia {
         class"video"
         loop 
         muted
-        src="${`/assets/photographers/${this.folder}/${this.media.video}`}" 
+        src="${`assets/photographers/${this.folder}/${this.media.video}`}" 
         name="Lilac_breasted_roller"
         controls="">
       </video>
@@ -58,7 +58,7 @@ export default class ProfileMedia {
         <h3 class="mediaCardTitle">${this.media.title}</h3>
         <div class="likes">
           <span>${this.media.likes}</span>
-          <img class="likes-img" src="/assets/icons/heart.png" alt="likes">
+          <img class="likes-img" src="assets/icons/heart.png" alt="likes">
         </div>
       </div>
     `;

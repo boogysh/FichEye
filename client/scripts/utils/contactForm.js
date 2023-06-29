@@ -1,7 +1,9 @@
 //open contact Form
 function displayModal() {
   const modal = document.getElementById("contact_modal");
+  // const closeFormBtn = document.querySelector(".closeFormBtn");
   modal.style.display = "block";
+  // closeFormBtn.focus();
 }
 //
 const contactBtn = document.querySelector(".contact_button");
