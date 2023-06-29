@@ -1,6 +1,8 @@
 export function displaySlider() {
   const slider = document.getElementById("slider");
   slider.style.display = "block";
+  const videoOne = document.querySelector(".videoOne");
+  videoOne && videoOne.focus();
 }
 
 function closeSlider() {
