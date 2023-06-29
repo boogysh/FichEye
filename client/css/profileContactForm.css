@@ -138,10 +138,13 @@ textarea.border-error {
     font-size: 56px;
     line-height: 65px;
   }
-  .closeFormBtn,
-  .closeFormImg {
+  .closeFormBtn {
     top: 30px;
     right: 30px;
+    width: 38px;
+    height: 38px;
+  }
+  .closeFormImg {
     width: 38px;
     height: 38px;
   }
@@ -194,10 +197,13 @@ textarea.border-error {
     height: 55px;
     font-size: 20px;
   }
-  .closeFormBtn,
-  .closeFormImg {
+  .closeFormBtn {
     top: 26px;
     right: 26px;
+    width: 34px;
+    height: 34px;
+  }
+  .closeFormImg {
     width: 34px;
     height: 34px;
   }
@@ -231,10 +237,13 @@ textarea.border-error {
   textarea {
     height: 130px;
   }
-  .closeFormBtn,
-  .closeFormImg {
+  .closeFormBtn {
     top: 25px;
     right: 25px;
+    width: 26px;
+    height: 26px;
+  }
+  .closeFormImg {
     width: 26px;
     height: 26px;
   }
@@ -279,10 +288,13 @@ textarea.border-error {
   textarea {
     height: 120px;
   }
-  .closeFormBtn,
-  .closeFormImg {
+  .closeFormBtn {
     top: 20px;
     right: 20px;
+    width: 22px;
+    height: 22px;
+  }
+  .closeFormImg {
     width: 22px;
     height: 22px;
   }
