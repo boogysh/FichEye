@@ -9,6 +9,8 @@
 
 .main-ph-page {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .photograph-header {
   display: flex;

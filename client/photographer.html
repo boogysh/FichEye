@@ -76,8 +76,8 @@
         <div class="sort-btn-container" id="sort-btn-container">
 
           <div role="navigation" class="sort-btn" id="sort-btn">
-            <input type="button" aria-label="Order by" class="sort-input" id="selected" onclick="toggleSortButton()"
-              value="Popularité">
+            <input type="button" tabindex="0" aria-label="Order by" class="sort-input" id="selected"
+              onclick="toggleSortButton()" value="Popularité">
             <span class="sort-btn-selected">Popularité</span>
             <img class="sort-arrow" src="assets/icons/arrowBottom2.png" alt="arrow top-bottom">
           </div>
@@ -116,7 +116,7 @@
               <a id="previous" aria-label="Previous image">
                 <img class="slider-icon" src="assets/icons/arrowLeft.png" alt="preview icon">
               </a>
-              <div tabindex="0" class="slider-images">
+              <div class="slider-images">
                 <!-- <img class="slider-img" alt=""> -->
                 <!-- || -->
                 <!-- <video class="videoOne" src="" controls loop></video> -->
@@ -130,28 +130,34 @@
         </div>
       </section>
       <!-- LIKES AND PRICE -->
-      <aside class="likes-wrapper">
-        <div class="likes-and-price">
-          <div class="likes">
-            <h4 class="likes-count">
-              680
-              <!-- innerHtml  replace 680, by a dynamic number-->
-            </h4>
-            <img class="heart-count" src="assets/icons/heart2.png" alt="like">
-          </div>
-          <span class="profile-price">
-            <!-- 300€ / jour -->
-          </span>
+      <!-- <aside class="likes-wrapper"> -->
+      <div class="likes-and-price">
+        <div class="likes">
+          <h4 class="likes-count">
+            0
+            <!-- innerHtml  replace 680, by a dynamic number-->
+          </h4>
+          <img class="heart-count" src="assets/icons/heart2.png" alt="like">
         </div>
-      </aside>
+        <span class="profile-price">
+          <!-- 300€ / jour -->
+        </span>
+      </div>
+      <!-- </aside> -->
 
     </main>
   </div>
-
+  <!-- profilePage -->
   <script type="module" src="scripts/pages/profilePage.js"></script>
+  <script type="module" src="scripts/constructors/sort.js"></script>
+  <!-- contactForm -->
+  <script src="scripts/constructors/contactForm.js"></script>
+  <!-- utils -->
   <script src="scripts/utils/sort-btn.js"></script>
-  <script type="module" src="scripts/utils/slider.js"></script>
-  <script src="scripts/utils/contactForm.js"></script>
+  <script src="scripts/utils/slider.js"></script>
+  <!-- likes -->
+  <script src="scripts/constructors/likeDislike.js"></script>
+  <script type="module" src="scripts/constructors/likedDisliked.js"></script>
 
 
 

@@ -1,4 +1,4 @@
-import SliderFactory from "./sliderFactory.js";
+import SliderFactory from "../factory/sliderFactory.js";
 export default class Slider {
   constructor(media, folder) {
     this.media = media;
@@ -23,23 +23,6 @@ export default class Slider {
         new SliderFactory(names, titles, this.folder, index);
       });
     });
-    // create slider after sorting media
-    const sortBtns = document.querySelectorAll(".sort-option-btn");
-    sortBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        currentImage.forEach((el, index) => {
-          // create  names and titles
-          names.push(el.name);
-          titles.push(el.title);
-          // create slider
-          el.addEventListener("click", () => {
-            currentIndex = index;
-            new SliderFactory(names, titles, this.folder, index);
-          });
-        });
-      });
-    });
-
     //go to Previous Slide
     previousBtn.addEventListener("click", () => {
       currentIndex = this.previous(names, titles, currentIndex);

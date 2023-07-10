@@ -17,6 +17,13 @@ function toggleSortButton() {
   sortBtn.classList.toggle("open");
   sortBtnSelected.classList.toggle("open");
 }
+//OPEN SORT BUTTON
+function openSortButton() {
+  sortGroup.classList.add("open");
+  sortArrow.classList.add("rotate");
+  sortBtn.classList.add("open");
+  sortBtnSelected.classList.add("open");
+}
 //CLOSE SORT BUTTON
 function closeSortButton() {
   sortGroup.classList.remove("open");
@@ -26,16 +33,18 @@ function closeSortButton() {
 }
 // close sortButton on focusout
 document.addEventListener("focusout", (ev) => {
-  // console.log(ev.relatedTarget);
   const selected = ev.relatedTarget?.id === "selected";
   const popularity = ev.relatedTarget?.id === "popularity";
   const date = ev.relatedTarget?.id === "date";
   const title = ev.relatedTarget?.id === "title";
   !selected && !popularity && !date && !title && closeSortButton();
 });
+// show the focused element
+document.addEventListener("focusout", (ev) => {
+  console.log(ev.relatedTarget);
+});
 // TOGGLE ARIA-EXPANDED
 function toggleAriaExpanded() {
-  // sortBtn.setAttribute(
   selected.setAttribute(
     "aria-expanded",
     `${!(sortBtn.getAttribute("aria-expanded") === "true")}`
@@ -43,7 +52,6 @@ function toggleAriaExpanded() {
 }
 // SET ARIA-ACTIVEDESCENDANT
 function setAriaActiveDescendant(btn) {
-  // sortBtn.setAttribute("aria-activedescendant", btn.id);
   sortGroup.setAttribute("aria-activedescendant", btn.id);
 }
 // REMOVE ARIA-SELECTED
@@ -60,6 +68,7 @@ function setAriaSelected(option) {
 const removeHidden = () => {
   optionsBtn.forEach((btn) => btn.classList.remove("hidden"));
 };
+
 //SHOW SELECTED OPTION LIKE "SELECTED" AND HIDE THE SAME VALUE IN OPTIONS LIST
 const select = (btn, text, el) => {
   removeHidden();
@@ -70,7 +79,7 @@ const select = (btn, text, el) => {
   setAriaActiveDescendant(btn);
   removeAriaSelected();
   setAriaSelected(btn);
-  toggleSortButton();
+  closeSortButton();
 };
 // ADD TEXT TO SELECTED OPTION, MANAGE ARIA-ACTIVEDESCENDANT & ARIA-SELECTED
 optionsBtn.forEach((btn) =>
@@ -86,18 +95,30 @@ optionsBtn.forEach((btn) =>
 // ADD TEXT TO SELECTED OPTION, MANAGE ARIA-ACTIVEDESCENDANT & ARIA-SELECTED
 // USING TAB & ENTER KEYS
 optionsBtn.forEach((btn) => {
-  btn.addEventListener("focus", () => {
-    document.addEventListener("keyup", (e) => {
-      if (e.key === "Enter") {
-        const id1 = document.activeElement.id === "popularity";
-        const id2 = document.activeElement.id === "date";
-        const id3 = document.activeElement.id === "title";
-        //
-        id1 && select(btn, "Popularité", popularity);
-        id2 && select(btn, "Date", date);
-        id3 && select(btn, "Titre", title);
-      }
-    });
+  window.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      const id1 = document.activeElement.id === "popularity";
+      const id2 = document.activeElement.id === "date";
+      const id3 = document.activeElement.id === "title";
+      //
+      id1 && select(btn, "Popularité", popularity);
+      id2 && select(btn, "Date", date);
+      id3 && select(btn, "Titre", title);
+    }
   });
 });
 
+// date.addEventListener("focus", () => {
+//   document.addEventListener("keyup", (e) => {
+
+//     })
+
+//open sort select on Focus
+// selected.addEventListener("focus", () => {
+//   openSortButton();
+// });
+
+// //
+// selected.addEventListener("click", () => {
+//   openSortButton();
+// });

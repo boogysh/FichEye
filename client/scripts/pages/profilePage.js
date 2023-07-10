@@ -1,8 +1,12 @@
 import CardApi from "../api/api.js";
+import FolderFactory from "../factory/folderFactory.js";
 import ProfileCard from "../templates/profileCard.js";
-import SortAndCreateMedia from "../templates/sortAndCreateMedia.js";
-import ManageLikesAndPrice from "../templates/manageLikesAndPrice.js";
-class photographerPage {
+import CreateMediaFactory from "../factory/createMediaFactory.js";
+import Slider from "../constructors/slider.js";
+import ManageLikesAndPrice from "../constructors/likesAndPriceWidget.js";
+import { sortByPopularity, sort } from "../constructors/sort.js";
+
+class ProfilePage {
   constructor() {
     this.$profileWrapper = document.querySelector(".wrapper-header");
     this.cardsApi = new CardApi("./data/photographers.json");
@@ -13,41 +17,57 @@ class photographerPage {
     this.title = document.querySelector("#title");
     this.sortBtns = document.querySelectorAll(".sort-option-btn");
   }
-  async main() {
+  async profile() {
     //get id
     const id = parseInt(window.location.search.split("id=")[1]);
     //
     // get Profile Card & Profile Media
     const data = await this.cardsApi.getCards();
     const cards = data.photographers;
-    const media = data.media;
+    const AllMedia = data.media;
     //
     //flter cards by id
     const filteredCards = cards.filter((card) => card.id === id);
     const card = filteredCards[0];
     //
-    // manage Folder Name (FACTORY)
-    const cardFirstName = card.name.split(" ")[0];
-    const folder = cardFirstName.split("-").join(" ");
+    // manage Folder Name
+    const folder = new FolderFactory(card).main();
+    //
+    // get profile Media
+    const media = AllMedia.filter((item) => item.photographerId === id);
+    //
+    //generate Form contact Name
+    this.contactName.innerHTML = `Contactez-moi<br>${card.name}`;
+    //
+    return {
+      card,
+      folder,
+      media,
+    };
+  }
+
+  async main() {
+    //get profile 
+    const { card, folder, media } = await this.profile();
     //
     //create profile Card
     const Template = new ProfileCard(card);
     this.$profileWrapper.appendChild(Template.createProfileHeader());
     //
-    //generate Form contact Name
-    this.contactName.innerHTML = `Contactez-moi<br>${card.name}`;
+    //CREATE MEDIA
+    // media === newMedia !!!
+    const newMedia = sortByPopularity(media);
+    new CreateMediaFactory(newMedia, folder);
+    new Slider(newMedia, folder).createMediaSlider();
     //
-    // get profile Media
-    const profileMedia = media.filter((item) => item.photographerId === id);
+    //SORT MEDIA
+    sort(folder, newMedia);
     //
-    //SORT AND CREATE MEDIA
-    new SortAndCreateMedia(profileMedia, folder).init();
-
     //MANAGE LIKES & PRICE
-    new ManageLikesAndPrice(profileMedia, card);
+    new ManageLikesAndPrice(newMedia, card);
   }
 }
-const phPage = new photographerPage();
-
+const phPage = new ProfilePage();
 phPage.main();
+
 

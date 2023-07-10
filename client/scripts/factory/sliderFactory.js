@@ -30,7 +30,7 @@ class SliderFactory {
   }
   video(src, title) {
     const newVideo = `
-    <video tabindex="0"
+    <video
       class="videoOne" 
       src="${src}" 
       controls

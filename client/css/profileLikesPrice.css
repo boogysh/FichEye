@@ -1,14 +1,9 @@
-.likes-wrapper {
-  z-index: 80;
+.likes-and-price {
   position: fixed;
   bottom: 0;
-  display: flex;
-  justify-content: flex-end;
-  width: 95%;
-  max-width: 1350px;
-  padding-right: 50px;
-}
-.likes-and-price {
+  right: 0;
+  margin-left: auto;
+  z-index: 80;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,6 +12,7 @@
   background-color: var(--secondary);
   background-color: #db8876;
   border-radius: 5px 5px 0 0;
+  margin-right: calc((100vw - 1440px) / 2 + 2.5%);
 }
 .likes {
   margin-left: 30px;
@@ -37,6 +33,11 @@
   font-size: 24px;
   font-weight: 500;
 }
+@media screen and (max-width: 1440px) {
+  .likes-and-price {
+    margin-right: 2.7%;
+  }
+}
 
 @media screen and (max-width: 991px) {
   .likes-and-price {
@@ -56,9 +57,6 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .likes-wrapper {
-    padding-right: 40px;
-  }
   .likes {
     margin-left: 20px;
   }
@@ -79,10 +77,6 @@
   }
 }
 @media screen and (max-width: 539px) {
-  .likes-wrapper {
-    padding-right: 30px;
-  }
-
   .likes-and-price {
     width: 240px;
     height: 50px;
@@ -90,7 +84,7 @@
   .likes-count {
     font-size: 16px;
   }
-  .heart-count{
+  .heart-count {
     height: 16px;
     width: 16px;
   }
@@ -99,9 +93,6 @@
   }
 }
 @media screen and (max-width: 359px) {
-  .likes-wrapper {
-    padding-right: 20px;
-  }
   .likes {
     margin-left: 15px;
   }
@@ -113,7 +104,7 @@
   .likes-count {
     font-size: 14px;
   }
-  .heart-count{
+  .heart-count {
     height: 14px;
     width: 14px;
   }

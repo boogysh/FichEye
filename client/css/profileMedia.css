@@ -7,6 +7,8 @@
   height: auto;
   border-radius: 5px;
   margin-top: 20px;
+  z-index: 10;
+  padding-bottom: 70px;
 }
 #media:after {
   content: "";
@@ -14,29 +16,33 @@
 }
 
 .mediaCard {
-  position: relative;
   width: 350px;
   height: auto;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
 }
-.mediaLink {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
+.mediaCard:focus {
+  border: 2px solid black;
 }
 
 .mediaImg {
+  position: relative;
   width: 350px;
   height: 300px;
   object-fit: cover;
   overflow: hidden;
   border-radius: 5px;
+}
+
+.mediaLink {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  width: 350px;
+  height: 300px;
+  overflow: hidden;
 }
 
 .video,
@@ -73,12 +79,30 @@ video {
   font-size: 24px;
   font-weight: 500;
   color: var(--primary);
+  margin-right: 6px;
 }
-.likes-img {
+.likes-btn {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+.likes-img,
+.likes-img-liked {
   width: 21px;
   height: 21px;
   object-fit: cover;
-  margin-left: 6px;
+  cursor: pointer;
+  z-index: 3;
+}
+.likes-img-liked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+}
+.liked {
+  display: block;
 }
 
 /* RESPONSIVE */
@@ -119,12 +143,17 @@ video {
   .likes span {
     font-size: 20px;
   }
-  .likes-img {
+  .likes-img,
+  .likes-img-liked {
     width: 16px;
     height: 16px;
   }
 }
 @media screen and (max-width: 479px) {
+  #media {
+    padding-bottom: 50px;
+  }
+  .mediaLink,
   .mediaImg,
   video {
     width: 320px;
@@ -143,13 +172,13 @@ video {
 }
 
 @media screen and (max-width: 359px) {
-  /* video{
-    width: 100%;
-  } */
+  #media {
+    padding-bottom: 40px;
+  }
   #media:after {
     width: 0px;
   }
-
+  .mediaLink,
   .mediaImg,
   video {
     width: 260px;
@@ -165,7 +194,8 @@ video {
   .likes span {
     font-size: 16px;
   }
-  .likes-img {
+  .likes-img,
+  .likes-img-liked {
     width: 14px;
     height: 14px;
   }

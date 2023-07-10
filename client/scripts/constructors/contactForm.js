@@ -14,12 +14,21 @@ contactBtn.addEventListener("click", () => {
 function closeModal() {
   const modal = document.getElementById("contact_modal");
   modal.style.display = "none";
+  setFocusBtnContact();
 }
 // close contact Form pressing escape key
 window.addEventListener("keyup", (e) => {
-  e.key === "Escape" && closeModal();
+  if (e.key === "Escape") {
+    closeModal();
+    setFocusBtnContact();
+  }
 });
-/////////////
+//
+//focus the contact button after closing the modal window
+function setFocusBtnContact() {
+  const contactBtn = document.querySelector(".contact_button");
+  contactBtn.focus();
+}
 
 //errorMessages
 const emptyErrorMsg = "";
@@ -108,7 +117,6 @@ const matchMessage = () => {
     localStorage.removeItem("message");
   }
 };
-
 //////////
 
 // request post
@@ -143,11 +151,11 @@ function resetAllInputs() {
 const submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", (e) => sendForm(e));
 //
-submitBtn.addEventListener("focus", () => {
-  window.addEventListener("keyup", (e) => {
-    e.key === "Enter" && sendForm(e);
-  });
-});
+// !!!  this action can duplicate the submit. not for use !!!
+// window.addEventListener("keyup", (e) => {
+//   const active = document.activeElement.id === "submitBtn";
+//   e.key === "Enter" && active && sendForm(e);
+// });
 
 async function sendForm(e) {
   e.preventDefault();
