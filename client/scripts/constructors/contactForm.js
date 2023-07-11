@@ -150,12 +150,6 @@ function resetAllInputs() {
 //events
 const submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", (e) => sendForm(e));
-//
-// !!!  this action can duplicate the submit. not for use !!!
-// window.addEventListener("keyup", (e) => {
-//   const active = document.activeElement.id === "submitBtn";
-//   e.key === "Enter" && active && sendForm(e);
-// });
 
 async function sendForm(e) {
   e.preventDefault();
@@ -169,7 +163,11 @@ async function sendForm(e) {
   localStorage.setItem("data", JSON.stringify(data));
   if (data.firstName && data.lastName && data.email && data.message) {
     await registerMessage();
-    localStorage.clear();
+    delete localStorage.firstName;
+    delete localStorage.lastName;
+    delete localStorage.email;
+    delete localStorage.message;
+    delete localStorage.data;
     resetAllInputs();
     closeModal();
   } else {

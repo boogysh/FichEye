@@ -1,5 +1,5 @@
-import Slider from "../constructors/slider.js";
-import CreateMediaFactory from "../factory/createMediaFactory.js";
+import slider from "../constructors/slider.js";
+import createMedia from "../constructors/media.js";
 
 // SORT BY POPULARITY
 export function sortByPopularity(media) {
@@ -29,8 +29,8 @@ function sortByTitle(media) {
 //sort create media & slider
 function sortMedia(sortedResult, folder, sortType) {
   sortedResult = sortType;
-  new CreateMediaFactory(sortedResult, folder);
-  new Slider(sortedResult, folder).createMediaSlider();
+  createMedia(sortedResult, folder);
+  slider(folder);
   //focus first mediaElement
   const media = document.querySelectorAll(".mediaLink");
   media[0].focus();

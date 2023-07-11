@@ -11,12 +11,12 @@ export default function likedDisliked(media) {
   //add liked state if photo is liked
   let addLiked = "";
   const liked = likes?.liked === true;
-  console.log("liked:", liked);
   liked && (addLiked = "liked");
   !liked && (addLiked = "");
-  console.log("addLiked:", addLiked);
   //set likes Count on load page
   let likesCount;
+  // likes && (likesCount = likes.likes);
+  // !likes && (likesCount = media.likes);
   if (likes) {
     likesCount = likes.likes;
   } else {

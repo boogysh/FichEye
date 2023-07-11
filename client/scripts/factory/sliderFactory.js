@@ -1,5 +1,5 @@
 class SliderFactory {
-  constructor(names, titles, folder, index) {
+  constructor(folder, names, titles, index) {
     this.names = names;
     this.titles = titles;
     this.folder = folder;

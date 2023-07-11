@@ -1,7 +1,7 @@
- //reset localstorage onload page
-    window.addEventListener("load", () => {
-      localStorage.clear();
-    });
+//reset localstorage onload page
+window.addEventListener("load", () => {
+  localStorage.clear();
+});
 
 function like(id, qty) {
   //get likes from localStorage
@@ -35,7 +35,8 @@ function like(id, qty) {
   //get toal likes
   const sumLikesTag = document.querySelector(".likes-count");
   const sumLikes_str = document.querySelector(".likes-count").innerHTML;
-  const sumLikes = parseInt(sumLikes_str);  
+  const sumLikes = parseInt(sumLikes_str);
+  //
   //change total likes
   let newSumLikes = sumLikes;
   isLikedImg && (newSumLikes = sumLikes + 1);

@@ -41,7 +41,7 @@ document.addEventListener("focusout", (ev) => {
 });
 // show the focused element
 document.addEventListener("focusout", (ev) => {
-  console.log(ev.relatedTarget);
+  // console.log(ev.relatedTarget);
 });
 // TOGGLE ARIA-EXPANDED
 function toggleAriaExpanded() {
